@@ -96,6 +96,12 @@
     return 10; // height of bar at index
 }
 
+
+- (UIColor *)barChartView:(JBBarChartView *)barChartView colorForBarViewAtIndex:(NSUInteger)index{
+    //return [UIColor greenColor];
+    return (index % 2 == 0) ? [UIColor blueColor] : [UIColor greenColor];
+}
+
 - (void)dealloc
 {
 
