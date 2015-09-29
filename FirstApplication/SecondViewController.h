@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
-@interface SecondViewController : UIViewController <XYPieChartDataSource>
+#import "JBChartView.h"
+#import "JBBarChartView.h"
+#import "JBLineChartView.h"
+@interface SecondViewController : UIViewController <XYPieChartDataSource, JBBarChartViewDataSource, JBBarChartViewDelegate>
 {
     XYPieChart *pieChart;
+    JBBarChartView *barChartView;
 }
 
 @end

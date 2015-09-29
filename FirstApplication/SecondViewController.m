@@ -24,10 +24,11 @@
     // Do any additional setup after loading the view.
     [self addHomeButton];
     [self createPieChart];
+    [self createBarChart];
     
 }
 
-    //create button for home page
+    //**create button for home page
 - (void)addHomeButton{
     UIButton *homeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [homeButton addTarget:self action:@selector(homeButtonAction) forControlEvents:UIControlEventTouchUpInside];
@@ -44,8 +45,12 @@
     
     [self dismissViewControllerAnimated:true completion:nil];
 }
+//**HomeButton end
 
 
+
+
+//**PieChart creation
 - (void)createPieChart{
     pieChart = [[XYPieChart alloc] initWithFrame:CGRectMake(10, 100, 200, 200) Center:CGPointMake(110, 110) Radius:100];
     [self.view addSubview:pieChart];
@@ -66,6 +71,37 @@
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index{
     return 30;
 }
+//**PieChartEnd
+
+
+
+//**JBBarChartCreation
+- (void)createBarChart{
+    barChartView = [[JBBarChartView alloc] init];
+    barChartView.dataSource = self;
+    barChartView.delegate = self;
+    barChartView.frame = CGRectMake(10, 350, 200, 200);
+    [barChartView reloadData];
+    [self.view addSubview:barChartView];
+    
+}
+
+- (NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView
+{
+    return 5; // number of bars in chart
+}
+
+- (CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtIndex:(NSUInteger)index
+{
+    return 10; // height of bar at index
+}
+
+- (void)dealloc
+{
+
+}
+
+//**JBBarChartEnd
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

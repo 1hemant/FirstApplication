@@ -17,6 +17,9 @@
 		A45DBACF1BB9089300DC1897 /* FirstApplicationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A45DBACE1BB9089300DC1897 /* FirstApplicationUITests.m */; };
 		A45DBADE1BB91FB500DC1897 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45DBADD1BB91FB500DC1897 /* SecondViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A4F672411BBA6090007BE31E /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F672401BBA6090007BE31E /* XYPieChart.m */; settings = {ASSET_TAGS = (); }; };
+		A4F672491BBA768D007BE31E /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F672441BBA768D007BE31E /* JBBarChartView.m */; settings = {ASSET_TAGS = (); }; };
+		A4F6724A1BBA768D007BE31E /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F672461BBA768D007BE31E /* JBChartView.m */; settings = {ASSET_TAGS = (); }; };
+		A4F6724B1BBA768D007BE31E /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F672481BBA768D007BE31E /* JBLineChartView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,12 @@
 		A45DBADD1BB91FB500DC1897 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		A4F6723F1BBA6090007BE31E /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		A4F672401BBA6090007BE31E /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		A4F672431BBA768D007BE31E /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		A4F672441BBA768D007BE31E /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		A4F672451BBA768D007BE31E /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		A4F672461BBA768D007BE31E /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		A4F672471BBA768D007BE31E /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		A4F672481BBA768D007BE31E /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +127,7 @@
 				A45DBAA91BB9089300DC1897 /* Supporting Files */,
 				A45DBADC1BB91FB500DC1897 /* SecondViewController.h */,
 				A45DBADD1BB91FB500DC1897 /* SecondViewController.m */,
+				A4F672421BBA768D007BE31E /* JBChartClasses */,
 				A4F6723E1BBA6090007BE31E /* XYPieChart */,
 			);
 			path = FirstApplication;
@@ -156,6 +166,20 @@
 				A4F672401BBA6090007BE31E /* XYPieChart.m */,
 			);
 			path = XYPieChart;
+			sourceTree = "<group>";
+		};
+		A4F672421BBA768D007BE31E /* JBChartClasses */ = {
+			isa = PBXGroup;
+			children = (
+				A4F672431BBA768D007BE31E /* JBBarChartView.h */,
+				A4F672441BBA768D007BE31E /* JBBarChartView.m */,
+				A4F672451BBA768D007BE31E /* JBChartView.h */,
+				A4F672461BBA768D007BE31E /* JBChartView.m */,
+				A4F672471BBA768D007BE31E /* JBLineChartView.h */,
+				A4F672481BBA768D007BE31E /* JBLineChartView.m */,
+			);
+			name = JBChartClasses;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +315,9 @@
 				A45DBADE1BB91FB500DC1897 /* SecondViewController.m in Sources */,
 				A45DBAB11BB9089300DC1897 /* ViewController.m in Sources */,
 				A45DBAAE1BB9089300DC1897 /* AppDelegate.m in Sources */,
+				A4F6724A1BBA768D007BE31E /* JBChartView.m in Sources */,
+				A4F672491BBA768D007BE31E /* JBBarChartView.m in Sources */,
+				A4F6724B1BBA768D007BE31E /* JBLineChartView.m in Sources */,
 				A4F672411BBA6090007BE31E /* XYPieChart.m in Sources */,
 				A45DBAAB1BB9089300DC1897 /* main.m in Sources */,
 			);
