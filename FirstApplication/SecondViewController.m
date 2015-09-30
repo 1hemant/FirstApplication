@@ -14,7 +14,7 @@
 
 @implementation SecondViewController{
     
-    NSMutableArray *arratTempMutable;
+    NSMutableArray *arrayTempMutable;
 }
 
 - (void)viewDidLoad {
@@ -22,6 +22,7 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     // Do any additional setup after loading the view.
+    arrayTempMutable = [[NSMutableArray alloc] initWithObjects:@"10",@"20",@"80",@"40",@"50", nil];
     [self addHomeButton];
     [self createPieChart];
     [self createBarChart];
@@ -88,12 +89,16 @@
 
 - (NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView
 {
-    return 5; // number of bars in chart
+    //return 5; // number of bars in chart
+    return [arrayTempMutable count];
+    
 }
 
 - (CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtIndex:(NSUInteger)index
 {
-    return 10; // height of bar at index
+    //return 10; // height of bar at index
+    CGFloat value = [[arrayTempMutable objectAtIndex:index] floatValue];
+    return value;
 }
 
 
