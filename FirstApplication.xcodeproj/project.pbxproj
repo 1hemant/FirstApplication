@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40B2DBF1BBD391E006B2623 /* App.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A40B2DBE1BBD391E006B2623 /* App.jpg */; settings = {ASSET_TAGS = (); }; };
 		A45DBAAB1BB9089300DC1897 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A45DBAAA1BB9089300DC1897 /* main.m */; };
 		A45DBAAE1BB9089300DC1897 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A45DBAAD1BB9089300DC1897 /* AppDelegate.m */; };
 		A45DBAB11BB9089300DC1897 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45DBAB01BB9089300DC1897 /* ViewController.m */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A40B2DBE1BBD391E006B2623 /* App.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = App.jpg; path = ../../../Aashish/NetlinkApp/NetlinkApp/App.jpg; sourceTree = "<group>"; };
 		A45DBAA61BB9089300DC1897 /* FirstApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45DBAAA1BB9089300DC1897 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A45DBAAC1BB9089300DC1897 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A40B2DC01BBD3946006B2623 /* Imges */ = {
+			isa = PBXGroup;
+			children = (
+				A40B2DBE1BBD391E006B2623 /* App.jpg */,
+			);
+			name = Imges;
+			sourceTree = "<group>";
+		};
 		A45DBA9D1BB9089300DC1897 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		A45DBAA81BB9089300DC1897 /* FirstApplication */ = {
 			isa = PBXGroup;
 			children = (
+				A40B2DC01BBD3946006B2623 /* Imges */,
 				A45DBAAC1BB9089300DC1897 /* AppDelegate.h */,
 				A45DBAAD1BB9089300DC1897 /* AppDelegate.m */,
 				A45DBAAF1BB9089300DC1897 /* ViewController.h */,
@@ -288,6 +299,7 @@
 				A45DBAB91BB9089300DC1897 /* LaunchScreen.storyboard in Resources */,
 				A45DBAB61BB9089300DC1897 /* Assets.xcassets in Resources */,
 				A45DBAB41BB9089300DC1897 /* Main.storyboard in Resources */,
+				A40B2DBF1BBD391E006B2623 /* App.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

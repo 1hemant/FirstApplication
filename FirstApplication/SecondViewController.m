@@ -8,7 +8,11 @@
 
 #import "SecondViewController.h"
 
-@interface SecondViewController ()
+@interface SecondViewController (){
+    id jsonData;
+    NSMutableArray *dataArray;
+}
+
 
 @end
 
@@ -20,13 +24,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor grayColor];
+    [self getHourlyData];
     // Do any additional setup after loading the view.
     arrayTempMutable = [[NSMutableArray alloc] initWithObjects:@"10",@"20",@"80",@"40",@"50", nil];
     [self addHomeButton];
+    
     [self createPieChart];
     [self createBarChart];
+    [barChartView reloadData];
+
     
+    
+}
+- (void)getHourlyData {
+    NSString *hourUrlString = @"https://uat-analytics.thecarecloud.com/netlink/plugin/cda/api/doQuery?path=/public/Demo/Landing%20Page/Telco%20Business%20Brain/Network%20Management/Network%20Insights.cda&dataAccessId=HourWiseRevenue&parampWeekEnd=%2226-Apr-2015%22&parampDate=%22All%22&parampFlag=%22All%22&parampDistrict=%22All%22&parampCity=%22All%22&parampHour=%22All%22&parampBTS=%22All%22&parampDonut=%22All%22";
+    NSURLResponse *hUrlResponse;
+    NSError *error;
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] init];
+    [urlRequest setURL:[NSURL URLWithString:hourUrlString]];
+    [urlRequest setHTTPMethod:@"GET"];
+    NSDate *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&hUrlResponse  error:&error];
+    if (error == nil) {
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        jsonData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"%@, %@",jsonData, str);
+        NSArray* tempData = [jsonData objectForKey:@"resultset"];
+        dataArray = [[NSMutableArray alloc] init];
+        int i=0,a=0,b=0,c=0,d=0;
+        for (; i<3; i++) {
+            NSMutableDictionary *dictTempMutable = [[NSMutableDictionary alloc] init];
+            if ([tempData objectAtIndex:i]) {
+                NSArray* arrCopyData2 = [tempData objectAtIndex:i];
+                [dictTempMutable setObject:[arrCopyData2 objectAtIndex:0] forKey:@"0"];
+                [dictTempMutable setObject:[arrCopyData2 objectAtIndex:1] forKey:@"1"];
+                [dictTempMutable setObject:[arrCopyData2 objectAtIndex:2] forKey:@"2"];
+                [dictTempMutable setObject:[arrCopyData2 objectAtIndex:3] forKey:@"3"];
+                
+                NSLog(@"The value in array a before assignment %d ", a);
+                a = [[arrCopyData2 objectAtIndex:1]intValue];
+                NSLog(@"The value in array a after assignment %d ", a);
+                b = [[arrCopyData2 objectAtIndex:2]intValue];
+                NSLog(@"The value in array b after assignment %d ", b);
+                c = [[arrCopyData2 objectAtIndex:3]intValue];
+                d = a+b+c;
+                [dictTempMutable setObject:[NSNumber numberWithInteger:d] forKey:@"4"];
+                [dataArray addObject:dictTempMutable];
+            }
+            else
+                break;
+        }
+        
+    }
 }
 
     //**create button for home page
@@ -90,15 +139,18 @@
 - (NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView
 {
     //return 5; // number of bars in chart
-    return [arrayTempMutable count];
+    return [arrayTempMutable count]; //to consume static data
+    //return [dataArray count]; //to use UAT data
     
 }
 
 - (CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtIndex:(NSUInteger)index
 {
     //return 10; // height of bar at index
-    CGFloat value = [[arrayTempMutable objectAtIndex:index] floatValue];
+    CGFloat value = [[arrayTempMutable objectAtIndex:index] floatValue]; ////to consume static data
+    //CGFloat value = [[dataArray objectAtIndex:index] floatValue]; //to use UAT data
     return value;
+    
 }
 
 
@@ -113,6 +165,12 @@
 }
 
 //**JBBarChartEnd
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
