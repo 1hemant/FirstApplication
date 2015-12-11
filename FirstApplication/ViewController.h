@@ -10,8 +10,8 @@
 
 @interface ViewController : UIViewController
 {
-    UITextField *myTextField;
-    UITextField *myPasswordField;
+    UITextField *userName;
+    UITextField *password;
 }
 
 
